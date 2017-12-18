@@ -96,5 +96,8 @@
                 padding: 2px 10px;
             }
         }
+        .el-form-item__label{
+            color: #fff;
+        }
     }
 </style>

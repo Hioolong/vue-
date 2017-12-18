@@ -10,7 +10,7 @@
           </el-header>
           <!-- main是动态变化的，可以通过子路由来控制 -->
           <el-main>
-            Main
+            <router-view></router-view>
           </el-main>
         </el-container>
       </el-container>
@@ -28,12 +28,27 @@
       }
     },
     methods: {
-
-    },
+		isLogin(){
+			this.$http.get(this.$api.islogin)
+				.then(res => {
+					console.log(res.data);
+					if(res.data.code == 'nologin'){
+						this.$message('亲爱的你还没登录呢');
+						this.$router.push('/login');
+					}else{
+						this.$message('欢迎您，'+JSON.parse(localStorage.getItem('user')).uname);
+					}
+				})
+		}
+	},
+	created(){
+		// 判断用户是否登录，如果没有登录就返回登录页面
+		this.isLogin();
+	},
     components:{
       appAside:asideComponent,
       appHeader:headerComponent
-    }
+	}
   };
 </script>
 

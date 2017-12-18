@@ -3,10 +3,19 @@ body,
 main {
   height: 100%;
 }
-a {
-  color: #fff;
-  text-decoration: none;
+/* 属性图标 */
+[class^=el-icon-] {
+  color: rgba(0, 0, 0, 0.35);
+  font-size: 20px;
 }
-.el-form-item__label {
-  color: #fff;
+[class^=el-icon-].active {
+  color: #000000;
+}
+.el-table_1_column_2 {
+  font-size: 12px;
+  color: #267cb7;
+}
+.el-table thead tr {
+  background-color: #e4e3e3;
+  font-size: 15px;
 }
