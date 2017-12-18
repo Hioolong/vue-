@@ -1,0 +1,12 @@
+html,
+body,
+main {
+  height: 100%;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+.el-form-item__label {
+  color: #fff;
+}
