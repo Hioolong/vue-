@@ -21,14 +21,19 @@ import './less/index.less';
 
 // 导入配置后的axios和api,并注入到vue原型里，将来在实例中通过this.来调用
 import axios from './js/axios-config.js';
-import api from './js/api-config.js';
+import api,{domain} from './js/api-config.js';
 Vue.prototype.$http = axios;
 Vue.prototype.$api = api;
+Vue.prototype.$domain = domain;
+// 设置全局导航守卫
+import routerGuard from './route/guard.js';
+const vueRouter = new VueRouter(routerConfig);
+vueRouter.beforeEach(routerGuard);
 
 new Vue({
     el:"#app",
     render(createElement){
         return createElement(rootComponent);//渲染根组件
     },
-    router: new VueRouter(routerConfig)
+    router: vueRouter
 })

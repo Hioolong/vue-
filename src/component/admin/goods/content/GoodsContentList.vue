@@ -39,7 +39,7 @@
             </el-table-column>
             <el-table-column label="操作">
                 <template slot-scope="scope">
-                    <a href="javascript:;">修改</a>
+                    <router-link :to="{name:'gcte',params:{id:scope.row.id}}">修改</router-link>
                 </template>
             </el-table-column>
         </el-table>

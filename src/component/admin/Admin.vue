@@ -43,7 +43,7 @@
 	},
 	created(){
 		// 判断用户是否登录，如果没有登录就返回登录页面
-		this.isLogin();
+		// this.isLogin();
 	},
     components:{
       appAside:asideComponent,
